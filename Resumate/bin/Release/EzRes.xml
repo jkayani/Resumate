@@ -1,0 +1,265 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EzRes
+</name>
+</assembly>
+<members>
+<member name="P:EzRes.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources._resume">
+	<summary>
+  Looks up a localized string similar to var Resume = {
+
+	contactInfo: {
+		name: "",
+		contactEmail: "",
+		contactPhone: "",
+		websiteURL: "",
+		street: "",
+		city: "",
+		state: "",
+		zip: ""
+	},
+
+	objective: "",
+
+	education:[
+			{
+				name: "",
+				startDate: "",
+				endDate: "",
+				location: "",
+				degree: ""
+			}
+	],
+
+	workExperience:[
+			{
+				name: "",
+				startDate: "",
+				endDate: "",
+				role: "",
+				location: ""
+			}
+	],
+
+	volunteerExperience:[
+			{
+				name: "",
+				startDate: "",
+				endDate: " [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.app">
+	<summary>
+  Looks up a localized string similar to var App = {
+
+	/**
+	* Clears all input fields of any default values
+	*/
+	clear: function(){
+		if(confirm("Reset Resume?")){ 
+
+			// Clear the inputs
+			$(".moduleInput").each(function(){
+				$(this).val("");
+			});
+
+			// Reset Resume
+			Resume = {
+				contactInfo: {
+					name: "",
+					contactEmail: "",
+					contactPhone: "",
+					websiteURL: "",
+					street: "",
+					city: "",
+					state: "",
+					zip: ""
+				},
+
+				objective: "",
+
+				education:[
+						{
+							name: "",
+		 [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.indexBeta">
+	<summary>
+  Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;Resumate&lt;/title&gt;
+	&lt;script src="jquery.js"&gt;&lt;/script&gt;
+	&lt;script src="app.js"&gt;&lt;/script&gt;
+	&lt;script src="render.js"&gt;&lt;/script&gt;
+	&lt;script src="resume.js"&gt;&lt;/script&gt;
+	&lt;script src="ui.js"&gt;&lt;/script&gt;
+	&lt;script src="web.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+	&lt;/script&gt;
+	&lt;link rel="stylesheet" type="text/css" href="reset.css"&gt;
+	&lt;link rel="stylesheet" type="text/css" href="stylesheet.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="tabs"&gt;
+	    &lt;ul class="tab-links"&gt;
+	        &lt;li class="active"&gt;&lt;a hre [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.jquery">
+	<summary>
+  Looks up a localized string similar to /*! jQuery v1.10.2 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
+//@ sourceMappingURL=jquery-1.10.2.min.map
+*/
+(function(e,t){var n,r,i=typeof t,o=e.location,a=e.document,s=a.documentElement,l=e.jQuery,u=e.$,c={},p=[],f="1.10.2",d=p.concat,h=p.push,g=p.slice,m=p.indexOf,y=c.toString,v=c.hasOwnProperty,b=f.trim,x=function(e,t){return new x.fn.init(e,t,r)},w=/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,T=/\S+/g,C=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,N=/^(?:\s*(&lt;[\w\W]+&gt;)[^&gt;]*|#([\w-]*))$/,k=/^ [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.jquery_ui">
+	<summary>
+  Looks up a localized string similar to /*! jQuery UI - v1.11.4 - 2015-03-22
+* http://jqueryui.com
+* Includes: core.css, draggable.css, resizable.css, selectable.css, sortable.css, accordion.css, autocomplete.css, button.css, datepicker.css, dialog.css, menu.css, progressbar.css, selectmenu.css, slider.css, spinner.css, tabs.css, tooltip.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Trebuchet%20MS%2CTahoma%2CVerdana%2CArial%2Csans-serif&amp;fwDefault=bold&amp;fsDefault=1.1em&amp;cornerRadius=4px&amp;bgColorHeade [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.render">
+	<summary>
+  Looks up a localized string similar to var Render = {
+
+	/**
+	* Clears the current Resume view
+	*/
+	clear: function(){
+		$(".resumeView").html("");
+	},
+
+	/**
+	* Attaches a click event to each entry added to the resume. The click event allows entries to be deleted from the Resume object,
+	* and then re-renders the Resume.
+	*/
+	attachDelete: function(){
+		var notFound = true;
+
+		$(".resumeView div &gt; div[class*='container']").each(function(){
+
+			// Append the delete icon to each entry
+			$(this).append(
+				"&lt;img class='delete'  [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.reset">
+	<summary>
+  Looks up a localized string similar to /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcapt [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.stylesheet">
+	<summary>
+  Looks up a localized string similar to body{
+    font-family: sans-serif;
+    padding-bottom: 50px;
+}
+.submitButton {
+    position: fixed;
+    bottom: 0;
+	right: 50%;
+}
+
+.dates {
+    text-align: right;
+    float: right;
+}
+
+#options {
+    position:absolute;
+    left: 0;
+    background: white;
+    height: 100%;
+    width: 50%;
+    display: none;
+    border: solid 1px lightgray;
+}
+
+#help {
+    position:absolute;
+    left: 0;
+    background: white;
+    height: 100%;
+    width: 50%;
+    border: solid 1px lightgray;
+    [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.trash">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.ui">
+	<summary>
+  Looks up a localized string similar to jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+ 
+        // Show/Hide Tabs
+        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+ 
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+
+    // Checks all the checkboxes for the Resume fields 
+    $("input.en [rest of string was truncated]";.
+</summary>
+</member><member name="P:EzRes.My.Resources.Resources.web">
+	<summary>
+  Looks up a localized string similar to var Web = {
+
+	searchURL: {
+		DigitalGov: "https://api.usa.gov/jobs/search.json",
+		AuthenticJobs: "http://www.authenticjobs.com/api/",
+	}, 
+
+	searchPublicSector: function(query, append){
+		$.ajax({
+			url: Web.searchURL["DigitalGov"],
+			data: {
+				query: encodeURI(query)
+			},
+			dataType: "jsonp",
+			success: function(data){
+				Render.renderWebResults(
+					Web.parse(data),
+					append
+				);
+			},
+			error: function(errorThrown){
+				alert("Search is broken \n" + errorThrown);
+			 [rest of string was truncated]";.
+</summary>
+</member><member name="T:EzRes.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

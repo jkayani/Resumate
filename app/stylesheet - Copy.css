@@ -1,0 +1,140 @@
+#navbar {
+	height: 10%;
+}
+.navsection {
+	height: 100px;
+	line-height: 100px;
+	width: 33.33333%;
+	text-align: center;
+	float: left;
+	background-color: #2d89ef;
+	color: white;
+	font-size: 200%;
+	font-family: "Segoe UI";
+}
+#subjectColumn {
+	text-align: right;
+	font-size: 21px;
+	width: 50%;
+	float: left;
+}
+#inputColumn {
+	width: 50%;
+	float: left;
+}
+
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* Resume */
+#resumeTab{
+	float: left;
+	width: 50%;
+}
+
+.resumeView{
+	width: 48%;
+	display: inline-block;
+	border: 1px gray solid;
+	margin: 5px;
+	padding: 1px;
+	font-family: sans-serif;
+}
+
+.resumeView h3{
+	font-weight: bold;
+}
+
+.resumeView .schoolDuration, .organizationDuration{
+	float: right;
+	margin-right: 5px;
+}
+
+div.resumeView .section{
+	height: 125px;
+	display: block;
+	overflow: scroll;
+}
+
+img.delete{
+	height: 16px;
+	margin-left: 20px;
+	visibility: hidden;
+}
+
+/* Contact Info */
+.contactInfo {
+	text-align: center;
+}
+
+.contactInfo .name {
+	font-weight: bold;
+}
+
+/* Objective */
+.objective {
+	border: 0;
+}
+
+/* Education */
+.education {
+	width: 100%;
+}
+
+.schoolDuration {
+	text-align: right;
+}

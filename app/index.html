@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closed Source Silverware</title>
+	<script src="jquery.js"></script>
+	<script src="app.js"></script>
+	<script src="render.js"></script>
+	<script src="resume.js"></script>
+	<script>
+	window.onload=function(){ 
+		var debug=true;
+		if(debug){
+			$(".moduleInput").each(function(){
+				$(this).val($(this).attr("id"));
+			});
+
+			$("button").click();
+		}
+	};
+	</script>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="resume.css" />
+</head>
+<body>
+	<div id="navbar">
+		<a href="tab1"><div class="navsection active"></a>
+			RESUME
+		</div>
+		<a href="tab2"><div class="navsection"></a>
+			APPLY
+		</div>
+		<a href="tab3"><div class="navsection"></a>
+			LEARN
+		</div>
+	</div>
+	<div id="resumeTab" class="tab active">
+		<br />
+		<div id="subjectColumn">
+			Name: <br />
+			Email: <br />
+			Phone: <br />
+			Website URL: <br />
+			Objective: <br /> <br />
+			School Name: <br />
+			Duration: <br />
+			Organization Name: <br />
+			Duration: <br />
+		</div>
+		<div id="inputColumn">
+			<input id="personName" class="moduleInput single" type="text"></input> <br />
+			<input id="contactEmail" class="moduleInput nested" type="text"></input> <br />
+			<input id="contactPhone" class="moduleInput nested" type="text"></input> <br />
+			<input id="websiteURL" class="moduleInput nested" type="text"></input> <br />
+			<textarea id="objective" class="moduleInput single" rows="3" style="margin-bottom:-3px;"></textarea> <br />
+			<input id ="schoolName" class="moduleInput listed" type="text"></input> <br />
+			<input  id="schoolDuration" class="moduleInput listed" type="text"></input> <br />
+			<input id ="organizationName" class="moduleInput listed" type="text"></input> <br />
+			<input  id="organizationDuration" class="moduleInput listed" type="text"></input> <br />
+			<button onclick="App.getInput()" class="moduleSubmit">Add</button>
+		</div>
+	</div>
+	<div id="applyTab" class="tab" style="display: hidden;">
+	
+	</div>
+	<div id="learnTab" class="tab" style="display: hidden;">
+
+	</div>
+	<div class="resumeView">
+	</div>
+</body>
+</html>

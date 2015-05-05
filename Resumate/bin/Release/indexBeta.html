@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resumate</title>
+	<script src="jquery.js"></script>
+	<script src="app.js"></script>
+	<script src="render.js"></script>
+	<script src="resume.js"></script>
+	<script src="ui.js"></script>
+	<script src="web.js"></script>
+	<script>
+	</script>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+	<div class="tabs">
+	    <ul class="tab-links">
+	        <li class="active"><a href="#resumeTab">Resume</a></li>
+	        <li><a href="#applyTab">Apply</a></li>
+	        <li><a href="#learnTab">Learn</a></li>
+	    </ul>
+		<div class="tab-content">
+	        <div id="resumeTab" class="tab active">
+                <button onclick="$('#options').toggle('slow');">OPTIONS</button>
+                <button onclick="App.demo()">DEMO</button>
+                <button onclick="App.clear()">RESET</button>
+                <button onclick="$('#help').toggle('slow');">HELP</button>
+                <button onclick="$('#about').toggle('slow');">ABOUT</button>
+                <div id="about">
+                    <div>
+                        <br />
+                            <strong>About The Developers:</strong>
+                            <br />
+                            <br />
+                            <strong>Josh Kayani</strong> is an 18 year old geek who loves to code! Having started web development freshman year of high school, he's a quick learner and able to adapt to new standards and coding techniques. He aspires to become a software developer in the future, and will attend NC State to major in Computer Science. 
+                            <br />
+                            <br />
+                            <strong>RJ Duane</strong> is a 17 year old senior at Mallard Creek. He started creating content for the web in 3rd grade after accidentally checking out a book on basic HTML from the school library. He has since maintained a passion for Web design and hopes to pursue a career as a webmaster.
+                            <br />
+                            <br />
+                            <strong>Jerry McElwain</strong> is a 19 year old highschool student at Mallard Creek High School. He has had an interest in anything related to computers since he was a young child, and soon hopes to join the USAF with a computer related MOS.
+                        <br />
+                    </div>
+                </div>
+                <div id="help">
+                    <div>
+                    <br />
+                    <strong>
+                        Click the "Help" button above to close
+                        <br />
+                    </strong>
+                        <br />
+    	                    Hi, welcome to <strong>Resumate: Automate Your Resume</strong>! This is the all-in-one tool to help you build your resume, apply for jobs, and nail your interview. 
+    	                    It's even split into 3 sections: <strong>Resume</strong>, <strong>Apply</strong>, and <strong>Learn</strong>. To switch between these sections, click on the tabs on the top. 
+    	                    Above this help box, you'll see 4 buttons: 
+                            <ul style="list-style-type: circle;">
+                                <li><strong>Options</strong>, which will open an options pane</li>
+                                <li><strong>Demo</strong>, which will create a demo resume</li>
+                                <li><strong>Reset</strong>, which will clear out the resume</li>
+                                <li><strong>Help</strong>, which will bring up this dialog</li>
+                                <li><strong>About</strong>, which will give you more information about our team</li>
+                            </ul>
+                        <br />
+                        	For more information on a particular section, <strong>hover over the input box</strong> and a <strong>tooltip</strong> will appear. Use these <strong>tooltips</strong> 
+                        	to guide you as you build your resume. In the options pane, you have 4 sections:
+                            <ul style="list-style-type: circle;">
+                                <li><strong>Sorting</strong>, which allows you to sort parts of your resume based on the duration of each entry</li>
+                                <li><strong>Fonts</strong>, which allow you to modify the font used in the resume</li>
+                                <li><strong>Presets</strong>,which allow you to choose a preset designed for a particular career field to customize your resume</li>
+                                <li><strong>Export</strong>, which gives you options for exporting your resume</li>
+                            </ul>
+                        <br />
+                            Once you have filled in your information, click the big "<strong>Add to Resume</strong>" button at the bottom of the screen!
+                        <br />
+                        <br />
+                        	In the <strong>Apply tab</strong>, type keywords related to your desired career in the search field and choose whether you want to search
+                        	for public jobs, private jobs, or both. Once you click search, it will come up with a list of available jobs, where you can 
+                        	get information at a glance, and even apply using the "Learn More" link.
+                        <br />
+                        <br />
+                            In the <strong>Learn tab</strong>, you'll get tons of useful information on how to master your interview. It's broken up into
+                            three sections, so you'll know what to do before, during, and after your interview.
+                        <br />
+                    </div>
+                </div>
+                <div id="options">
+                    <div>
+                        <br />
+    	        		<strong>Sorting: Education</strong>
+    	        		<br />
+    	        		<input type="radio" class="education startDate" name="edsorting" title="Sort the education section from present to past based on the start year" value="g->l"></input>Start Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="education startDate" name="edsorting" title="Sort the education section from past to present based on the start year" value="l->g"></input>Start Date: Chronological 
+    	        		<br />      
+    	        		<input type="radio" class="education endDate" name="edsorting" title="Sort the education section from present to past based on the end year" value="g->l"></input>End Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="education endDate" name="edsorting" title="Sort the education section from past to present based on the end year" value="l->g"></input>End Date: Chronological
+    	        		<br />
+    	        		<br />
+    	        		<strong>Sorting: Certifications</strong>
+    	        		<br />
+    	        		<input type="radio" class="certifications yearEarned" name="certsorting" title="Sort the certifications section from present to past based on the start year" value="g->l"></input>Start Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="certifications yearEarned" name="certsorting" title="Sort the certifications section from past to present based on the start year" value="l->g"></input>Start Date: Chronological
+    	        		<br />      
+    	        		<input type="radio" class="certifications yearEarned" name="certsorting" title="Sort the certifications section from present to past based on the start year" value="g->l"></input>End Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="certifications yearEarned" name="certsorting" title="Sort the certifications section from past to present based on the start year" value="l->g"></input>End Date: Chronological
+    	        		<br />
+    	        		<br />
+    	        		<strong>Sorting: Work Experience</strong>
+    	        		<br />
+    	        		<input type="radio" class="workExperience startDate" name="worksorting" title="Sort the work experience section from present to past based on the start year" value="g->l"></input>Start Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="workExperience startDate" name="worksorting" title="Sort the work experience section from past to present based on the start year" value="l->g"></input>Start Date: Chronological
+    	        		<br />      
+    	        		<input type="radio" class="workExperience endDate" name="worksorting" title="Sort the work experience section from present to past based on the start year" value="g->l"></input>End Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="workExperience endDate" name="worksorting" title="Sort the work experience section from past to present based on the start year" value="l->g"></input>End Date: Chronological
+    	        		<br />
+    	        		<br />
+    	        		<strong>Sorting: Volunteer Experience</strong>
+    	        		<br />
+    	        		<input type="radio" class="volunteerExperience startDate" name="volsorting" title="Sort the volunteer experience section from present to past based on the start year" value="g->l"></input>Start Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="volunteerExperience startDate" name="volsorting" title="Sort the volunteer experience section from past to present based on the start year" value="l->g"></input>Start Date: Chronological	 
+    	        		<br />      
+    	        		<input type="radio" class="volunteerExperience endDate" name="volsorting" title="Sort the volunteer experience section from present to past based on the start year" value="g->l"></input>End Date: Reverse Chronological
+    	        		<br />
+    	        		<input type="radio" class="volunteerExperience endDate" name="volsorting" title="Sort the volunteer experience section from past to present based on the start year" value="l->g"></input>End Date: Chronological
+    	        		<br />
+    	        		<br />
+    	        		<strong>Fonts</strong>
+    	        		<br />
+                        <select class="fonts">
+                			<option value="0">Calibri</option>
+    	        			<option selected="selected" value="1">Helvetica</option>	
+    	        			<option value="2">Arial Narrow</option>
+    	        			<option value="3">Times New Roman</option>
+    	        			<option value="4">Cambria</option>
+            			</select>
+            			<br />
+            			<br />
+            			<strong>Common Resume Presets</strong>
+            			<br />
+    	        		<select class="presets">
+    	        			<option value="0">Default</option>
+    	        			<option value="1">Classic</option>	
+    	        			<option value="2">STEM</option>
+    	        			<option value="3">Arts</option>
+            			</select>
+            			<br />
+            			<br />
+            			<strong>Export Options</strong>
+            			<br />
+            			Remove trashcans (for copy + paste, cannot edit): <input type="checkbox" class="exportClipboard" value="export"></input>
+                        <br />
+                        JSON: <input class="json" value="jsonHere" type="text"></input><button onclick="App.exportJSON()">export</button><button onclick="App.importJSON()">import</button>
+                    </div>
+                </div>
+	        	<table id="resumeInput">
+                    <tr>
+    	        		<td style="text-align: right;"></td>
+		        		<td><strong>Personal Information</strong></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;"><input onclick="App.updateResumePreferences($(this))" title="Show or hide the Name section" class="enableDisable" value="name" type="checkbox"></input>Name:&nbsp;</td>
+		        		<td><input id="personName" title="Enter your full name - no nicknames!" class="moduleInput single" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;"><input class="enableDisable" title="Show or hide the Email section" onclick="App.updateResumePreferences($(this))" value="contactEmail" type="checkbox"></input>Email:&nbsp;</td>
+		        		<td><input id="contactEmail" class="moduleInput nested" title="Enter your email address here - be sure it's a professional-looking address" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;"><input class="enableDisable" title="Show or hide the Phone section" onclick="App.updateResumePreferences($(this))" value="contactPhone" type="checkbox"></input>Phone:&nbsp;</td>
+		        		<td><input id="contactPhone" title="Enter your phone number here, including the area code" class="moduleInput nested" type="text"></input></td>
+	        		</tr>
+                    <tr>
+    	        		<td style="text-align: right;"><input class="enableDisable" title="Show or hide the website section" onclick="App.updateResumePreferences($(this))" value="websiteURL" type="checkbox"></input>Website URL:&nbsp;</td>
+		        		<td><input id="websiteURL" title="Enter your website URL for a custom portfolio here if you have one" class="moduleInput nested" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;"><input title="Show or hide the address section" onclick="App.updateResumePreferences($(this))" class="enableDisable" value="street" type="checkbox"></input>Street Address:&nbsp;</td>
+		        		<td><input id="street" class="moduleInput nested" title="Enter your mailing address here including a house or apartment number (don't put your city and state here). Abbreviations are acceptable" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">City:&nbsp;</td>
+		        		<td><input id="city" title="Enter your city of residence here" class="moduleInput nested" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">State:&nbsp;</td>
+		        		<td><input id="state" title="Enter your state of residence here - abbreivations are acceptable" class="moduleInput nested" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Zip:&nbsp;</td>
+		        		<td><input id="zip" title="Enter your zip code of residence here" class="moduleInput nested" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right; vertical-align:top;"><input title="Show or hide the Objective section" class="enableDisable" onclick="App.updateResumePreferences($(this))" value="objective" type="checkbox"></input>Objective:&nbsp;</td>
+		        		<td><textarea id="objective" title="Enter your employment objective here - what kind of career do you invision?" class="moduleInput single" rows="3" style="margin-bottom:-3px;"></textarea></td>
+	        		</tr>
+                    <tr>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                		<td style="text-align: right;"><input class="enableDisable" title="Show or hide the education section" onclick="App.updateResumePreferences($(this))" value="education" type="checkbox"></input></td>
+		        		<td><strong>Education</strong></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">School Name:&nbsp;</td>
+		        		<td><input id="school-name" title="Enter the full name of your school here" class="moduleInput listed" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Duration:&nbsp;</td>
+		        		<td><input id="school-startDate" title="Enter the year you started attending this school here" class="moduleInput listed" type="text"></input> to <input id="school-endDate" class="moduleInput listed" title="Enter the year you stopped attending this school here" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+	        			<td style="text-align: right;">Degree:&nbsp;</td>
+	        			<td><input id="school-degree" title="Enter the degree you earned from this school here (ex: Bachelors of Science in Computer Science)" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+    				<tr>
+ 	  					<td style="text-align: right;">Location:&nbsp;</td>
+	        			<td><input id="school-location" title="Enter the city and state of this school here - abbreivations are acceptable" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+    				<tr>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                		<td style="text-align: right;"><input class="enableDisable" title="Show or hide the certifications section" onclick="App.updateResumePreferences($(this))" value="certifications" type="checkbox"></input></td>
+		        		<td><strong>Certifications</strong></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Certificate Name:&nbsp;</td>
+		        		<td><input id="certificate-name" title="Enter the title of the certification here (ex: Oracle Certified Database Developer)" class="moduleInput listed" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Organization Name:&nbsp;</td>
+		        		<td><input id="certificate-organizationName" title="Enter the name of the organization that awarded this certification here" class="moduleInput listed" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+	        			<td style="text-align: right;">Year Earned:&nbsp;</td>
+	        			<td><input id="certificate-yearEarned" title="Enter the year this certification was earned" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+                    <tr>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                    	<td style="text-align: right;"><input class="enableDisable" title="Show or hide the Work Experience section" onclick="App.updateResumePreferences($(this))" value="workExperience" type="checkbox"></input></td>
+		        		<td><strong>Work Experience</strong></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Work Name:&nbsp;</td>
+		        		<td><input id="work-name" class="moduleInput listed" title="Enter the name of the company here" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Duration:&nbsp;</td>
+		        		<td><input id="work-startDate" class="moduleInput listed" title="Enter the year you started working at this company here" type="text"></input> to <input id="work-endDate" title="Enter the year you ended working at this company here" class="moduleInput listed" type="text"></td>
+	        		</tr>
+	        		<tr>
+	        			<td style="text-align: right;">Role:&nbsp;</td>
+	        			<td><input id="work-role" title="Enter the title you have/had at this company (ex: Software Developer)" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+    				<tr>
+ 	  					<td style="text-align: right;">Location:&nbsp;</td>
+	        			<td><input id="work-location" title="Enter the city and state in which this company is located - abbreviations are acceptable" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+                    <tr>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;"><input class="enableDisable"  title="Show or hide the Volunteer Experience section" onclick="App.updateResumePreferences($(this))" value="volunteerExperience" type="checkbox"></input></td>
+		        		<td><strong>Volunteer Experience</strong></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Organization Name:&nbsp;</td>
+		        		<td><input id="volunteer-name" title="Enter the name of the volunteer organization here" class="moduleInput listed" type="text"></input></td>
+	        		</tr>
+	        		<tr>
+		        		<td style="text-align: right;">Duration:&nbsp;</td>
+		        		<td><input id="volunteer-startDate" class="moduleInput listed" title="Enter the year you started volunteering at this organization" type="text"></input> to <input id="volunteer-endDate" class="moduleInput listed" title="Enter the year you ended volunteering at this organization here" type="text"></td>
+	        		</tr>
+	        		<tr>
+	        			<td style="text-align: right;">Role:&nbsp;</td>
+	        			<td><input id="volunteer-role" title="Enter the title you have/had at this organization (ex: Lead Tutor)" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+    				<tr>
+ 	  					<td style="text-align: right;">Location:&nbsp;</td>
+	        			<td><input id="volunteer-location" title="Enter the city and state in which this organization is located - abbreivations are acceptable" class="moduleInput listed"
+	        				type="text"></input></td>
+    				</tr>
+                    <tr>
+                        <td><br /></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;"><input class="enableDisable" title="Show or hide the References section" onclick="App.updateResumePreferences($(this))" value="references" type="checkbox"></input></td>
+		        		<td><strong>References</strong></td>
+	        		</tr>
+    				<tr>
+    					<td style="text-align: right;">Reference Name:&nbsp;</td>
+    					<td><input id="reference-name" title="Enter the name of your reference" class="moduleInput listed"
+	        				type="text"></input></td>
+					</tr>
+    				<tr>
+    					<td style="text-align: right;">Reference Email:&nbsp;</td>
+    					<td><input id="reference-contactEmail" title="Enter the reference's email address; be sure to use one he/she can be contacted by" class="moduleInput listed"
+	        				type="text"></input></td>
+					</tr>
+    				<tr>
+    					<td style="text-align: right;">Reference Phone:&nbsp;</td>
+    					<td><input id="reference-contactPhone" title="Enter the phone number for this reference; be sure to use one he/she can be contacted by" class="moduleInput listed"
+	        				type="text"></input></td>
+					</tr>
+    				<tr>
+    					<td style="text-align: right;">Relationship:&nbsp;</td>
+    					<td><input id="reference-relationship" title="Enter the relationship you have with this reference (ex: Boss, Teacher, etc.)" class="moduleInput listed"
+	        				type="text"></input></td>
+					</tr>
+	        	</table>
+                <div class="submitButton"><button onclick="App.getInput()" class="moduleSubmit"><strong style="font-size: 20px;">Add to Resume</strong></button></div>
+			</div>
+			<div id="applyTab" class="tab">
+				<div id="infoColumn">
+		            Job keywords: <input id="searchQuery" type="text">
+		        	</input>
+		        	<br />
+		        	<input id="publicSector" type="checkbox" value="public">
+		       		</input>Public Sector
+		       		<br />
+		       		<input id="privateSector" type="checkbox" value="private">
+		       		</input>Private Sector
+		       		<br />
+		            <button onclick="App.findJobs()">Search</button>
+	            </div>
+	            <br />
+	            <div class="listings">
+	            </div>
+	        </div>
+	        <div id="learnTab" class="tab">
+	            <h1>Quick Tips to Ace Your Interview</h1>
+                <br />
+                <div class="learnSection">
+                <h2>Part 1: Before the interview</h2>
+                <ul>
+                    <li>Put the date and time in your phone, on your wall calendar, wherever you will remember!</li>
+                    <li>Make sure you have the professional clothes and they are clean and wrinkle free.</li>
+                    <li>Do lots of research and memorize their job listing so you know exactly what the are looking for</li>
+                    <li>Leave early so you arrive on time!</li>
+                </ul>
+                 </div>
+                <br />
+                <div class="learnSection">
+                <h2>Part 2: During the Interview</h2>
+                <ul>
+                    <li>Start off the interview with a firm handshake</li>
+                    <li>Stay calm - they want to hire you just as much as you want to be hired!</li>
+                    <li>Speak confidently and keep your responses succinct</li>
+                </ul>
+                <br /><h3>Common interview questions and answers:</h3>
+                <br /><strong>Q: Tell me about your experience at [job on resume]</strong>
+                <br />A: Make sure your answer mentions experiences you know will be useful at this new job.
+                Also, don't badmouth you're previous employer!
+                <br /><br />
+                <br /><strong>Q: What is your biggest professional accomplishment so far?</strong>
+                <br />A: Pick the accomplish that seems most professional from the outside, and use a statistic
+                if you can (25% improvement, etc.) Again, make sure it's relevant to this new job!
+                <br /><br />
+                <br /><strong>Q: How would your coworkers describe you?</strong>
+                <br />A: With this question, you want to show that you work well with others. Focus on group projects you made bi contributions to and worked as a team on.
+                <br /><br />
+                <br /><strong>Q: What is your greatest weakness?</strong>
+                <br />A: The classic interview question! You want to answer this wuestion srategicly. Name a weakness that can also be a strength, like being a perfectionist, or being frustrated when when someone doesn't get their work done on time.
+                <br /><br />
+                <strong>Q: Why are ou the best person for this job?</strong>
+                A: You did your research, right? for this question you want to think back to the job posting and mentions some of the keywords they're looking for in a candidate.
+            </div>
+                <br /><br />
+                <div class="learnSection">
+                <h2>Part 3: After the Interview</h2>
+                <br />The most important thing after you finish the interview is to send a thank-you or follow-up letter. Most candidates don't send one, so sending one can go a long way! You send send a letter even if you know you are getting the job or ou are sure someone else will get it. Keep your thank-you letter short and make sure to thank your interviewer for their time. Show that you are really excited for this particular position, even if it is just one of msny jobs you are applying for.
+            </div>
+	        </div>
+	    </div>
+	    <div class="resumeView">
+		</div>
+        <p style="text-align:right;padding-right:12.5%;"><strong>Click "Demo" to fill this section in with an example!</strong></p>
+	</div>
+</body>
+</html>
